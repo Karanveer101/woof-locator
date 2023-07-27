@@ -246,7 +246,7 @@ async function getBreeds() {
             console.log(breeds);
             return breeds;
         } else {
-            throw new Error("Unable to get dog breeds");
+            throw new Error("Unable to get dog breed");
         }
     } catch (error) {
         throw new Error(`Error retrieving dog breeds: ${error.message}`);
