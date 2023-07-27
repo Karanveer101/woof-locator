@@ -1,0 +1,98 @@
+:root {
+    --light_Amber: #ffbf00;
+    --olive_green: #556b2f;
+    --chestnut_brown: #964b00;
+    --dark_olive_green: #405324;
+}
+
+body {
+    background-color: var(--light_Amber);
+    margin: 0px;
+}
+
+h2 {
+    color: var(--olive_green);
+}
+
+.dog-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 350px));
+    gap: 15px;
+    justify-content: center;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.dog {
+    text-align: center;
+    background-color: white;
+    border-radius: 25px;
+    width: 294px;
+    justify-self: center;
+}
+
+#primaryDogImage {
+    height: 294px;
+    width: 294px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+#logo {
+    height: 65px;
+}
+
+form {
+    background-color: var(--chestnut_brown);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    margin-top: 50px;
+    margin-bottom: 35px;
+}
+
+input,
+select {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 200px;
+    padding: 10px;
+    background-color: #556b2f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--dark_olive_green);
+}
+
+header {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    padding-top: 35px;
+}
+
+.dog:hover {
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    background-color: var(--chestnut_brown);
+    color: white;
+    height: 50px;
+}
+
+footer p {
+    line-height: 50px;
+}

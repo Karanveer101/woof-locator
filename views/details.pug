@@ -1,0 +1,32 @@
+doctype html
+html
+  head
+    title Woof Locator
+    link(href='/styles/details.css', rel='stylesheet')
+  body
+    header
+      img#logo(src='/images/logo.png' alt='logo')
+    nav
+      .links 
+        a#searchNav(href='http://localhost:3000/') < Back to search
+        a#nextNav(href='#') Next >
+    .photos
+      each photo in photos
+        img(src= photo.medium alt='dog photo')
+    main
+      h1 About 
+      .characteristics 
+        h2 Characteristics
+        each characteristic in dogDetails.tags
+          p=characteristic
+      .description 
+        h2 Description 
+        p=dogDetails.description
+    aside 
+      img(src=staticMap alt='map')
+      p=dogDetails.contact.address1 
+      p=dogDetails.contact.email 
+      p=dogDetails.contact.phone
+    footer
+      p='Woof Locator, Copyright, 2023'
+    script(src='main.js')

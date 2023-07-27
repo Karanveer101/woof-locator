@@ -1,0 +1,28 @@
+extends layout.pug 
+
+block content 
+  main
+    aside.filterSearch
+      form(action="/" method="POST" id="breedForm")
+        select#breed(name='breed')
+          each breed in breeds 
+            option(value=breed.name) #{breed.name}
+        button#searchBtn(type="submit") Apply filter
+ 
+    .dog-container
+      if searchResult 
+        each result in searchResult 
+          .dog(id=result.id)
+            //- img#primaryDogImage(src= result.primary_photo_cropped.small alt='dog image')
+            h2= result.name 
+            p= result.age 
+            p= result.breeds.primary 
+            p= result.distance 
+      else 
+        each dog in data 
+          .dog(id=dog.id)
+            img#primaryDogImage(src= dog.primary_photo_cropped.small alt='dog image')
+            h2= dog.name 
+            p= dog.age
+            p=dog.breeds.primary
+            p= dog.distance

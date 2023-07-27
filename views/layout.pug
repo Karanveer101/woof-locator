@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title Woof Locator
+    link(href='/styles/home.css', rel='stylesheet')
+  body
+    header 
+      img#logo(src='/images/logo.png' alt='logo')
+    form(action="/search" method="POST")
+      input(type="text" name="location" id="locationInput" placeholder="city, state, or postal code")
+      select#distance(name='distance')
+        option(value='25') 25 Miles
+        option(value='50') 50 Miles
+        option(value='100') 100 Miles
+        option(value='anywhere') Anywhere
+      button#searchBtn(type="submit") Search
+
+    block content
+    footer
+      p='Woof Locator, Copyright, 2023'
+    script(src='main.js')
