@@ -7,12 +7,11 @@ html
     header 
       img#logo(src='/images/logo.png' alt='logo')
     form(action="/search" method="POST")
-      input(type="text" name="location" id="locationInput" placeholder="city, state, or postal code")
+      input(type="text" name="location" id="locationInput" placeholder="city, state, or postal code" required)
       select#distance(name='distance')
         option(value='25') 25 Miles
         option(value='50') 50 Miles
         option(value='100') 100 Miles
-        option(value='anywhere') Anywhere
       button#searchBtn(type="submit") Search
 
     block content

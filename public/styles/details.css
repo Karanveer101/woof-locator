@@ -85,6 +85,9 @@ main {
     margin: auto;
     display: flex;
     flex-direction: column;
+}
+
+aside {
+    display: flex;
     justify-content: center;
-    align-items: center;
 }

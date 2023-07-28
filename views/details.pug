@@ -23,10 +23,11 @@ html
         h2 Description 
         p=dogDetails.description
     aside 
-      img(src=staticMap alt='map')
-      p=dogDetails.contact.address1 
-      p=dogDetails.contact.email 
-      p=dogDetails.contact.phone
+      .contact
+        img(src=staticMap alt='map')
+        p=dogDetails.contact.address1 
+        p=dogDetails.contact.email 
+        p=dogDetails.contact.phone
     footer
       p='Woof Locator, Copyright, 2023'
     script(src='main.js')

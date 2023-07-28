@@ -14,26 +14,41 @@ h2 {
     color: var(--olive_green);
 }
 
+main {
+    max-width: 1200px;
+    display: flex;
+    gap: 25px;
+    margin: auto;
+}
+
+.filterSearch {
+    max-width: 200px;
+}
+
+form#breedForm {
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+}
 .dog-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 350px));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 250px));
     gap: 15px;
     justify-content: center;
-    max-width: 1200px;
-    margin: auto;
+    max-width: 1000px;
 }
 
 .dog {
     text-align: center;
     background-color: white;
     border-radius: 25px;
-    width: 294px;
+    width: 250px;
     justify-self: center;
 }
 
 #primaryDogImage {
-    height: 294px;
-    width: 294px;
+    height: 250px;
+    width: 250px;
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
 }
@@ -95,4 +110,12 @@ footer {
 
 footer p {
     line-height: 50px;
+}
+
+select#breed {
+    width: 200px;
+}
+
+label {
+    font-weight: bolder;
 }

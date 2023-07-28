@@ -2,8 +2,9 @@ extends layout.pug
 
 block content 
   main
-    aside.filterSearch
+    .filterSearch
       form(action="/" method="POST" id="breedForm")
+        label(for="breed") BREED
         select#breed(name='breed')
           each breed in breeds 
             option(value=breed.name) #{breed.name}
@@ -13,7 +14,7 @@ block content
       if searchResult 
         each result in searchResult 
           .dog(id=result.id)
-            //- img#primaryDogImage(src= result.primary_photo_cropped.small alt='dog image')
+            img#primaryDogImage(src= result.primary_photo_cropped.small alt='dog image')
             h2= result.name 
             p= result.age 
             p= result.breeds.primary 

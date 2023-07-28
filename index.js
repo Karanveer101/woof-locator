@@ -110,7 +110,12 @@ app.post("/", async (req, res) => {
         });
 
         if (response.status === 200) {
-            const searchResult = response.data.animals;
+            const data = response.data.animals;
+
+            // Filter out dogs without photos
+            const searchResult = data.filter(
+                (dog) => dog.primary_photo_cropped != null
+            );
             console.log(searchResult);
             res.render("home", { searchResult, breeds });
         } else {
@@ -160,16 +165,21 @@ async function getDogs() {
 
     //make a get request
     try {
-        const url = `https://api.petfinder.com/v2/animals?type=dog&location=ON`;
+        const url = `https://api.petfinder.com/v2/animals?type=dog&limit=50`;
         const response = await axios.get(url, {
             headers: {
                 Authorization: `Bearer ${accessToken}`,
             },
         });
         if (response.status === 200) {
-            const dogInfo = response.data;
-            console.log(dogInfo);
-            return dogInfo.animals;
+            const data = response.data.animals;
+            console.log(data);
+
+            // Filter out dogs without photos
+            const dogInfo = data.filter(
+                (dog) => dog.primary_photo_cropped != null
+            );
+            return dogInfo;
         } else {
             throw new Error("Unable to get dogs");
         }
